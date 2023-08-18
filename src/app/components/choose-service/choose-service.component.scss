@@ -1,0 +1,62 @@
+.service-details {
+  margin: 8px 0;
+
+  div {
+    color: #1C1C28;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  p {
+    color: #898B8E;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+.service-price {
+  color: #1C1C28;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+::ng-deep.show-service-btn {
+  border-radius: 12px;
+  border: 2px dashed #D9D9D9;
+  background: #FFF;
+
+
+  button {
+    margin: auto !important;
+    width: 100% !important;
+
+    border: none !important;
+    background: #FFF !important;
+
+
+    &:hover {
+      border: none !important;
+      background: #FFF !important;
+    }
+
+    &:focus {
+      border: none !important;
+      background: #FFF !important;
+    }
+
+    &:active {
+      border: none !important;
+      background: #FFF !important;
+    }
+
+    &:disabled {
+      border: none !important;
+      background: #FFF !important;
+    }
+  }
+}

@@ -1,16 +1,49 @@
-<div *ngFor="let s of selected;let index">
-  {{s}}
-<!--  delete button-->
-  <button (click)="delete(index)">Delete</button>
-</div>
+<p-card [header]="chooseServiceHeader" dir="rtl">
 
-<br>
-<br>
-<br>
-<br>
+  <p-card class="w-full">
+    <div
+      *ngFor="let select of selected;let i = index"
+      class="flex border-solid border-1 border-gray-200 mb-3 flex-row gap-5">
+      <p-avatar [image]="select.serviceImage" class="p-mr-2" shape="square" size="large" styleClass="p-mr-2"></p-avatar>
 
-<div *ngFor="let u of unselected; let index">
-  {{u}}
-<!--  add button-->
-  <button (click)="add(index)">Add</button>
-</div>
+      <div class="service-details">
+        <div>{{select.serviceName}}</div>
+        <p>{{select.time}}</p>
+      </div>
+
+      <div class="flex align-self-center mr-auto gap-5">
+        <div class="service-price">{{select.price}}</div>
+        <i (click)="delete(i)" class="pi text-red-500 cursor-pointer ml-4 pi-trash"></i>
+      </div>
+    </div>
+
+    <div class="show-service-btn">
+      <p-button (click)="toggle()" label="أضف خدمة اخري"></p-button>
+
+    </div>
+  </p-card>
+
+
+  <p-overlay [(visible)]="overlayVisible"
+
+             [responsive]="{ direction: 'bottom', contentStyleClass: 'h-20rem' }"
+             contentStyleClass="p-4 surface-overlay shadow-2 border-round">
+    <div *ngFor="let u of unselected; let i = index">
+      <div class="flex mb-3 flex-row gap-5">
+        <p-avatar [image]="u.serviceImage" class="p-mr-2" shape="square" size="large" styleClass="p-mr-2"></p-avatar>
+
+        <div class="service-details">
+          <div>{{u.serviceName}}</div>
+          <p>{{u.time}}</p>
+        </div>
+
+        <div class="flex align-self-center mr-auto gap-5">
+          <div class="service-price">{{u.price}}</div>
+          <i (click)="add(i)" class="pi text-green-500 cursor-pointer ml-4 pi-plus"></i>
+        </div>
+      </div>
+    </div>
+  </p-overlay>
+
+
+</p-card>
