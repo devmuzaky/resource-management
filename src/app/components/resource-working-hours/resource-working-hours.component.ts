@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-resource-working-hours',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./resource-working-hours.component.scss']
 })
 export class ResourceWorkingHoursComponent {
+
+  days = [
+    "السبت",
+    "الأحد",
+    "الإثنين",
+    "الثلاثاء",
+    "الأربعاء",
+    "الخميس",
+    "الجمعة"
+  ]
 
 }

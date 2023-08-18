@@ -1,1 +1,16 @@
-<p>choose-service works!</p>
+<div *ngFor="let s of selected;let index">
+  {{s}}
+<!--  delete button-->
+  <button (click)="delete(index)">Delete</button>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div *ngFor="let u of unselected; let index">
+  {{u}}
+<!--  add button-->
+  <button (click)="add(index)">Add</button>
+</div>

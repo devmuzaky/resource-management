@@ -1,0 +1,16 @@
+<div dir="rtl">
+  <p-inputSwitch [(ngModel)]="active"></p-inputSwitch>
+  {{day}}
+
+  <ul *ngIf="active">
+    <li *ngFor="let item of times">
+      <p-calendar dir="ltr" [(ngModel)]="item.from" [timeOnly]="true" [hourFormat]="'12'" (onSelect)="updateStore(day)"></p-calendar>
+      <p-calendar dir="ltr" [(ngModel)]="item.to" [timeOnly]="true" [hourFormat]="'12'"></p-calendar>
+
+      <i (click)="addNew()" *ngIf="item.order == 1" class="pi pi-plus"></i>
+      <i (click)="remove(item)" *ngIf="item.order != 1 " class="pi pi-minus"></i>
+
+    </li>
+  </ul>
+
+</div>
