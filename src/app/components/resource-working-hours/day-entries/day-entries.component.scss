@@ -1,0 +1,25 @@
+::ng-deep {
+  .add-minus-btn {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-color: #d6dde7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  p-calendar {
+    input {
+      width: 18vw !important;
+      text-align: center;
+      margin-bottom: 2px !important;
+
+    }
+
+    .p-datepicker{
+      top: 51px !important;
+    }
+  }
+}

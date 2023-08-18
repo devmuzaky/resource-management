@@ -1,0 +1,41 @@
+.delete-resource {
+  width: 150px;
+  height: 57px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  border: 1px solid #FF4B55;
+  background: #FFF6F6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  cursor: pointer;
+}
+
+.add-resource {
+  width: 150px;
+  height: 57px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  border: 1px solid #00B2FF;
+  background: #F6F9FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+  cursor: pointer;
+}
+
+.edit-resource {
+  width: 150px;
+  cursor: pointer;
+  height: 57px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  background: #000000;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 19px;
+}

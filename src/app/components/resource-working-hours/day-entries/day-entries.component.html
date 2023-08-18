@@ -1,16 +1,40 @@
-<div dir="rtl">
-  <p-inputSwitch [(ngModel)]="active"></p-inputSwitch>
-  {{day}}
+<div class="flex align-items-center m-4 gap-4" dir="rtl">
 
-  <ul *ngIf="active">
-    <li *ngFor="let item of times">
-      <p-calendar dir="ltr" [(ngModel)]="item.from" [timeOnly]="true" [hourFormat]="'12'" (onSelect)="updateStore(day)"></p-calendar>
-      <p-calendar dir="ltr" [(ngModel)]="item.to" [timeOnly]="true" [hourFormat]="'12'"></p-calendar>
+  <div class="flex flex-row gap-4 align-items-center align-self-start">
+    <p-inputSwitch [(ngModel)]="active"></p-inputSwitch>
+    <div>{{day}}</div>
+  </div>
 
-      <i (click)="addNew()" *ngIf="item.order == 1" class="pi pi-plus"></i>
-      <i (click)="remove(item)" *ngIf="item.order != 1 " class="pi pi-minus"></i>
+  <ul *ngIf="active" class="flex flex-column gap-3">
+    <li *ngFor="let item of times" class="flex align-items-center gap-6">
+      <p-calendar
+        (onSelect)="updateStore(day)"
+        [(ngModel)]="item.from"
+        [hourFormat]="'12'"
+        [readonlyInput]="true"
+        [timeOnly]="true"
+        dir="ltr"
+      >
+      </p-calendar>
 
+      <div>
+        --
+      </div>
+
+      <p-calendar
+        [(ngModel)]="item.to"
+        [hourFormat]="'12'"
+        [readonlyInput]="true"
+        [timeOnly]="true"
+        dir="ltr">
+      </p-calendar>
+
+      <i (click)="addNew()" *ngIf="item.order == 1" class="cursor-pointer add-minus-btn pi pi-plus"></i>
+      <i (click)="remove(item)" *ngIf="item.order != 1 " class="cursor-pointer add-minus-btn pi pi-minus"></i>
+      <i *ngIf="item.order == 1" class="pi pi-copy cursor-pointer"></i>
     </li>
+
   </ul>
 
 </div>
+
