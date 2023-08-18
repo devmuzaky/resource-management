@@ -8,6 +8,13 @@ import { ChooseServiceComponent } from './components/choose-service/choose-servi
 import { ResourceDetailsComponent } from './components/resource-details/resource-details.component';
 import { ResourceWorkingHoursComponent } from './components/resource-working-hours/resource-working-hours.component';
 import { OptionsComponent } from './components/options/options.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MenubarModule} from "primeng/menubar";
+import {AvatarModule} from "primeng/avatar";
+import {InputSwitchModule} from "primeng/inputswitch";
+import {FormsModule} from "@angular/forms";
+import { DayEntriesComponent } from './components/resource-working-hours/day-entries/day-entries.component';
+import {CalendarModule} from "primeng/calendar";
 
 @NgModule({
   declarations: [
@@ -17,10 +24,17 @@ import { OptionsComponent } from './components/options/options.component';
     ChooseServiceComponent,
     ResourceDetailsComponent,
     ResourceWorkingHoursComponent,
-    OptionsComponent
+    OptionsComponent,
+    DayEntriesComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MenubarModule,
+    AvatarModule,
+    InputSwitchModule,
+    FormsModule,
+    CalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
