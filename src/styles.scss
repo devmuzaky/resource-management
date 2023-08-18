@@ -10,5 +10,25 @@
 }
 
 body {
+  background-color: #f3f5f7;
   font-family: var(--font-family);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input {
+  outline: none;
+  border: none;
 }

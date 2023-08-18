@@ -15,6 +15,11 @@ import {InputSwitchModule} from "primeng/inputswitch";
 import {FormsModule} from "@angular/forms";
 import { DayEntriesComponent } from './components/resource-working-hours/day-entries/day-entries.component';
 import {CalendarModule} from "primeng/calendar";
+import {CardModule} from "primeng/card";
+import {InputTextModule} from "primeng/inputtext";
+import {RadioButtonModule} from "primeng/radiobutton";
+import {InputNumberModule} from "primeng/inputnumber";
+import {DropdownModule} from "primeng/dropdown";
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import {CalendarModule} from "primeng/calendar";
     InputSwitchModule,
     FormsModule,
     CalendarModule,
+    CardModule,
+    InputTextModule,
+    RadioButtonModule,
+    InputNumberModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
