@@ -1,2 +1,24 @@
+<div class="container">
+  <div class="appointment__container" dir="rtl">
+    <div>
 
-<app-day-entries *ngFor="let day of days" [day]="day"></app-day-entries>
+      <h4>حدد مواعيد العمل للمورد</h4>
+      <p>
+        تكوين إعدادات الأسبوع الخاص بك هنا. ما عليك سوى تحريك أشرطة التمرير وإضافة / إزالة أوقات الراحة لإعداد ساعات
+        العمل.
+      </p>
+    </div>
+<!--    <div class="btn-container">-->
+
+<!--      <label class="switch btn-color-mode-switch">-->
+<!--        <input value="1" id="color_mode" name="color_mode" type="checkbox">-->
+<!--        <label class="btn-color-mode-switch-inner" data-off="إعدادات متقدمة" data-on="إعدادات تقليدية" for="color_mode"></label>-->
+<!--      </label>-->
+
+<!--    </div>-->
+  </div>
+
+<div class="flex flex-column gap-6">
+  <app-day-entries *ngFor="let day of days" [day]="day"></app-day-entries>
+</div>
+</div>

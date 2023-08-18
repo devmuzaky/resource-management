@@ -1,1 +1,141 @@
-<p>resource-details works!</p>
+<div class="flex flex-column gap-4">
+  <p-card class="border-round-sm" dir="rtl">
+    <div class="flex gap-5 flex-row">
+      <p-avatar class="align-self-end mr-2"
+                image="https://i.pinimg.com/originals/d2/ad/bc/d2adbc60bf36aa7bcc282e2ca70df137.jpg" shape="circle"
+                size="xlarge"
+                slot="avatar"></p-avatar>
+      <div class="flex flex-column w-full ml-5 gap-2">
+        <label for="username">اسم الموارد</label>
+        <input [(ngModel)]="resourceName" aria-describedby="username-help" id="username" pInputText/>
+      </div>
+    </div>
+  </p-card>
+
+
+  <p-card class="border-round-sm" dir="rtl">
+    <div class="flex flex-row gap-5 blue-gray-100">
+      <label>اختر نوع الموارد</label>
+      <p-radioButton
+        (click)="onResourceTypeChange(1)"
+        [(ngModel)]="resourceType"
+        label="حجز خلال اليوم"
+        labelStyleClass=" mr-2"
+        name="resourceType"
+        value="1">
+      </p-radioButton>
+      <p-radioButton
+        (click)="onResourceTypeChange(2)"
+        [(ngModel)]="resourceType"
+        label="حجز مدة ( أكثر من يوم )"
+        labelStyleClass="mr-2"
+        name="resourceType"
+        value="2">
+      </p-radioButton>
+    </div>
+  </p-card>
+
+
+  <p-card class="flex flex-column gap-6 border-round-sm available" dir="rtl">
+    <div class="flex flex-column align-items-start gap-1 blue-gray-100">
+      <label dir="ltr">المورد متاح إلى</label>
+      <div class="available__time">
+        <p-inputNumber
+          [(ngModel)]="availableTime"
+          [max]="100"
+          [min]="0"
+          [showButtons]="true"
+          ariaLabel="minmax"
+          dir="ltr"
+          inputStyleClass="available__time__input"
+          mode="decimal">
+        </p-inputNumber>
+        <p-dropdown [(ngModel)]="selectedUnit" [options]="timeUnit" class="dropdown-units"></p-dropdown>
+      </div>
+    </div>
+
+    <div class="flex flex-column align-items-start gap-1 blue-gray-100">
+      <label dir="ltr">وقت المورد</label>
+      <div class="flex flex-row gap-5 blue-gray-100 align-items-center justify-content-between w-full">
+        <div class="flex flex-row gap-4">
+          <p-radioButton
+            (click)="onResourceTimeChange(1)"
+            [(ngModel)]="resourceTime"
+            label="وقت الخدمة"
+            labelStyleClass=" mr-2"
+            name="resourceTime"
+            value="1">
+          </p-radioButton>
+          <p-radioButton
+            (click)="onResourceTimeChange(2)"
+            [(ngModel)]="resourceTime"
+            label="الوقت ثابت"
+            labelStyleClass="mr-2"
+            name="resourceTime"
+            value="2">
+          </p-radioButton>
+        </div>
+
+        <div *ngIf="showFixedTime" class="border-solid align-self-end border-gray-100 border-round-md">
+          <p-inputNumber
+            [(ngModel)]="fixedTimeValue"
+            [max]="100"
+            [min]="0"
+            [showButtons]="true"
+            [step]="1"
+            buttonLayout="horizontal"
+            decrementButtonClass="incrementDecrementButtonClass"
+            decrementButtonIcon="pi pi-minus"
+            dir="ltr"
+            incrementButtonClass="incrementDecrementButtonClass"
+            incrementButtonIcon="pi pi-plus"
+            inputId="horizontal"
+          ></p-inputNumber>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-column align-items-start gap-1 blue-gray-100">
+      <label dir="ltr"> <i class="pi pi-info-circle"></i> الحجز المتعدد </label>
+      <div class="flex flex-row gap-5 blue-gray-100 align-items-center justify-content-between w-full">
+        <div class="flex flex-row gap-4">
+          <p-radioButton
+            (click)="onBookingTypeChange(1)"
+            [(ngModel)]="bookingType"
+            label="حجز واحد فقط"
+            labelStyleClass="mr-2"
+            name="bookingType"
+            value="1">
+          </p-radioButton>
+          <p-radioButton
+            (click)="onBookingTypeChange(2)"
+            [(ngModel)]="bookingType"
+            label="حجز اكثر من شخص لنفس الموعد"
+            labelStyleClass="mr-2"
+            name="bookingType"
+            value="2">
+          </p-radioButton>
+        </div>
+
+        <div *ngIf="showMultiBooking" class="border-solid w-5 align-self-end border-gray-100 border-round-md">
+              <p-inputNumber
+                [(ngModel)]="availableTime"
+                [max]="100"
+                [min]="0"
+                [showButtons]="true"
+                ariaLabel="minmax"
+                dir="ltr"
+                inputStyleClass="available__time__input"
+                mode="decimal">
+              </p-inputNumber>
+
+
+        </div>
+      </div>
+    </div>
+
+
+  </p-card>
+
+
+</div>
